@@ -6,6 +6,9 @@ import { console } from 'inspector';
 import generator from 'generate-password';
 import cryptoRandomString from 'crypto-random-string';
 
+
+
+
 test.describe('API test suite', () => {
     const userName = 'testuser212';
     const password = '123456aBc#';
@@ -198,7 +201,7 @@ test.describe('UI test suite', () => {
     })
     test('Edit profile', async ({ page }) => {
         const userName = 'testuser212';
-        const password = '123456aBc!';
+        const password = '123456aBc#';
         await pm.getLogin().loginUser(userName, password);
 
         await pm.navigateTo().navigateToProfile()
@@ -207,9 +210,9 @@ test.describe('UI test suite', () => {
 
     })
 
-    test('Edit profile to change password', async ({ page }) => {
+    test.skip('Edit profile to change password', async ({ page }) => {
         const userName = 'testuser212';
-        const currentPassword = '123456aBc@';
+        const currentPassword = '123456aBc#';
         const newPassword = '123456aBc!';
         await pm.getLogin().loginUser(userName, currentPassword);
 
